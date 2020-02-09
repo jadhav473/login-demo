@@ -7,14 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.logindemo.R;
-import com.example.logindemo.mvc.GEMSDKManager;
+import com.example.logindemo.util.MySDKManager;
 
-
-/**
- * This screen will decide where to go
- * if user is not logged in then show him login activity else main activity
- *
- */
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +21,9 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(GEMSDKManager.getInstance().isUserLoggedIn())
+
+                //check the user login status
+                if(MySDKManager.getInstance().isUserLoggedIn())
                 {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     finish();

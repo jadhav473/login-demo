@@ -1,24 +1,23 @@
-package com.example.logindemo.mvc;
+package com.example.logindemo.util;
 
 
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-
 import com.example.logindemo.data.model.User;
 import com.google.gson.Gson;
 
-public class GEMSharedPreferences
+public class MySharedPreferences
 {
-    private static final String PREF_SHARED_RESOURCE_NAME        = "my-preference";
-    private static final String USER_LOGIN_STATUS                = "userLoginStatus";
-    private static final String USER                = "user";
+    private static final String PREF_SHARED_RESOURCE_NAME = "my-preference";
+    private static final String USER_LOGIN_STATUS = "userLoginStatus";
+    private static final String USER = "user";
 
     private static SharedPreferences sharedPreferences;
 
 
-    public GEMSharedPreferences()
+    public MySharedPreferences()
     {
     }
 

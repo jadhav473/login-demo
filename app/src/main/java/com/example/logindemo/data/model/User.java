@@ -2,34 +2,24 @@ package com.example.logindemo.data.model;
 
 public class User
 {
-    int userID;
-    String userName;
+    String userID;
     String firstName;
     String lastName;
     String email;
 
-    public User(int userID, String userName, String firstName, String lastName, String email) {
+    public User(String userID, String userName, String firstName, String lastName, String email) {
         this.userID = userID;
-        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public int getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getFirstName() {

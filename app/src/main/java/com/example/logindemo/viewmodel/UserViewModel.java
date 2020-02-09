@@ -14,15 +14,16 @@ public class UserViewModel extends ViewModel {
 
     public void onLoginClick(View view)
     {
-        String errMsg=validate();
+        String errMsg = validate();
 
         if(errMsg.isEmpty())
         {
             //it means there is no error
+
             //try for login
             if(userId.equals(APP_CONSTANT.userId) && password.equals(APP_CONSTANT.password))
             {
-                authListener.onLoginSuccess(new User(101,APP_CONSTANT.userId,"Vishal","Jadhav","jadhav473@gmail.com"));
+                authListener.onLoginSuccess(new User(APP_CONSTANT.userId,APP_CONSTANT.userName,"Vishal","Jadhav","jadhav473@gmail.com"));
             }
             else
             {
@@ -39,12 +40,12 @@ public class UserViewModel extends ViewModel {
 
     public void setAuthListener(AuthListener authListener)
     {
-        this.authListener=authListener;
+        this.authListener = authListener;
     }
 
     private String validate()
     {
-        //1. check if username is valid
+        //check if username is valid
         if(userId ==null || userId.isEmpty())
         {
             return "userId cannot be empty";
@@ -52,7 +53,7 @@ public class UserViewModel extends ViewModel {
         {
             return  "password cannot be empty";
         }
-        // TODO: 08-02-2020 length validation
+        // TODO: 09-02-2020 length or expression validation or else any validation
 
         return "";
     }

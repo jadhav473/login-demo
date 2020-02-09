@@ -1,4 +1,4 @@
-package com.example.logindemo.mvc;
+package com.example.logindemo.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,27 +10,27 @@ import android.widget.Toast;
 import com.example.logindemo.data.model.User;
 
 
-public class GEMSDKManager
+public class MySDKManager
 {
 
-    private static String TAG  = GEMSDKManager.class.getName();
-    @SuppressLint("StaticFieldLeak") private static GEMSDKManager myinstance = null;
+    private static String TAG  = MySDKManager.class.getName();
+    @SuppressLint("StaticFieldLeak") private static MySDKManager myinstance = null;
     private Context context;
-    private GEMSharedPreferences gemSharedPreferences;
+    private MySharedPreferences mySharedPreferences;
 
-    private GEMSDKManager(Context context)
+    private MySDKManager(Context context)
     {
         try
         {
             this.context = context;
-            this.gemSharedPreferences = new GEMSharedPreferences();
-            this.gemSharedPreferences.init(context);
-            Log.i(TAG, " SDK is initialized successfully");
+            this.mySharedPreferences = new MySharedPreferences();
+            this.mySharedPreferences.init(context);
+            Log.i(TAG, "initialized successfully");
         }
         catch(Throwable t)
         {
             t.printStackTrace();
-            Log.e(TAG, "GEM SDK can't be instantiated", t);
+            Log.e(TAG, "can't be instantiated", t);
         }
 
     }
@@ -40,13 +40,13 @@ public class GEMSDKManager
     {
         if(myinstance == null)
         {
-            myinstance = new GEMSDKManager(context);
+            myinstance = new MySDKManager(context);
         }
 
     }
 
 
-    public static GEMSDKManager getInstance()
+    public static MySDKManager getInstance()
     {
         return myinstance;
     }
@@ -56,24 +56,20 @@ public class GEMSDKManager
         return this.context;
     }
 
-    public GEMSharedPreferences getSharedPreferences()
+    public MySharedPreferences getSharedPreferences()
     {
-        return this.gemSharedPreferences;
+        return this.mySharedPreferences;
     }
 
     public boolean isUserLoggedIn()
     {
-        return this.gemSharedPreferences.getUserLoginStatus();
-        // return this.getUserName() != null && this.getPassword() != null && this.getLastLoginTimeInMillis() > -1L && this.getUserProfile() != null;
+        return this.mySharedPreferences.getUserLoginStatus();
     }
 
     public void setUserLoggedIn(boolean userStatus)
     {
-        gemSharedPreferences.setUserLoginStatus(userStatus);
+        mySharedPreferences.setUserLoginStatus(userStatus);
     }
-
-
-
 
     public void toastShort(final String msg)
     {
@@ -82,7 +78,7 @@ public class GEMSDKManager
         {
             public void run()
             {
-                Toast.makeText(GEMSDKManager.this.context, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MySDKManager.this.context, msg, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -94,18 +90,18 @@ public class GEMSDKManager
         {
             public void run()
             {
-                Toast.makeText(GEMSDKManager.this.context, msg, Toast.LENGTH_LONG).show();
+                Toast.makeText(MySDKManager.this.context, msg, Toast.LENGTH_LONG).show();
             }
         });
     }
 
     public void saveUser(User user)
     {
-        gemSharedPreferences.saveUser(user);
+        mySharedPreferences.saveUser(user);
     }
 
     public User getUser()
     {
-        return  gemSharedPreferences.getUser();
+        return  mySharedPreferences.getUser();
     }
 }
