@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         //set user data
         User user= MySDKManager.getInstance().getUser();
-        ((TextView)findViewById(R.id.userId)).setText(user.getUserID());
+        ((TextView)findViewById(R.id.userId)).setText("Hello, "+user.getUserID());
         ((TextView)findViewById(R.id.email)).setText(user.getEmail());
         ((TextView)findViewById(R.id.firstName)).setText(user.getFirstName());
         ((TextView)findViewById(R.id.lastName)).setText(user.getLastName());
