@@ -20,7 +20,7 @@ public class UserViewModel extends ViewModel {
         {
             //it means there is no error
 
-            //try for login
+            //here we can also try for login with API call
             if(userId.equals(APP_CONSTANT.userId) && password.equals(APP_CONSTANT.password))
             {
                 authListener.onLoginSuccess(new User(APP_CONSTANT.userId,APP_CONSTANT.userName,"Vishal","Jadhav","jadhav473@gmail.com"));
