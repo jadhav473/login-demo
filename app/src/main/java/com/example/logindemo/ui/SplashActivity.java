@@ -23,14 +23,11 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 //check the user login status
-                if(MySDKManager.getInstance().isUserLoggedIn())
-                {
+                if(MySDKManager.getInstance().isUserLoggedIn()) {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     finish();
 
-                }
-                else
-                {
+                } else {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     finish();
                 }

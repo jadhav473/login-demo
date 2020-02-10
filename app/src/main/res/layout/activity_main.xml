@@ -10,40 +10,46 @@
 
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/userId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/email"
         android:layout_marginTop="20dp"
-
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:id="@+id/firstName"
-        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/lastName"
         android:layout_marginTop="20dp"
-
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <Button
         android:id="@+id/logoutButton"
         android:layout_marginTop="20dp"
-
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:textColor="@color/white"
+        android:background="@drawable/submit_btn_bg"
+        android:text="Logout"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
 </LinearLayout>
